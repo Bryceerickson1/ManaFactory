@@ -36,6 +36,8 @@
 *.opendb
 *.VC.db
 
+.vs/
+
 # =============== Miscellaneous Files ===============
 *.bak
 *.swp
