@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PlayerStats : MonoBehaviour
+public class Stats : MonoBehaviour
 {
 
     [SerializeField] int _health;
@@ -12,7 +12,6 @@ public class PlayerStats : MonoBehaviour
     void Start()
     {
         OnCreate?.Invoke(_health);
-        TakeDamage(20);
     }
 
     public void TakeDamage(int damaged)
