@@ -6,10 +6,12 @@ public class PlayerStats : MonoBehaviour
 
     [SerializeField] int _health;
     [SerializeField] UnityEvent<int> OnDamaged;
+    [SerializeField] UnityEvent<int> OnCreate;
     public int Health => _health;
 
     void Start()
     {
+        OnCreate?.Invoke(_health);
         TakeDamage(20);
     }
 
