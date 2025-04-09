@@ -2,6 +2,7 @@
 using System.Linq;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Map
 {
@@ -15,6 +16,9 @@ namespace Map
         public static MapPlayerTracker Instance;
 
         public bool Locked { get; set; }
+
+        [Header("Barron UI")]
+        public Sprite Barons;
 
         private void Awake()
         {

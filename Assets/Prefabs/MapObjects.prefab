@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41edfa9cd46e12b4389c9a79ec3ae0d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lockAfterSelecting: 0
+  lockAfterSelecting: 1
   enterNodeDelay: 1
   mapManager: {fileID: 5337413451174954175}
   view: {fileID: 5337413451386887161}
@@ -144,7 +144,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 19bf411c79e522b4b8e54f82b0140314, type: 2}
   nodePrefab: {fileID: 6746199761131337685, guid: 621ccae6afb8e8949ba963674577578a, type: 3}
   orientationOffset: -4
-  background: {fileID: 21300000, guid: 154be9da94274494592f60439cfd560e, type: 3}
+  background: {fileID: 21300000, guid: 015a1b8b5a567f548889b70b825c9cd6, type: 3}
   backgroundColor:
     serializedVersion: 2
     rgba: 4294967295
