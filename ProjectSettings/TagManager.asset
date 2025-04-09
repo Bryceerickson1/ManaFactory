@@ -4,8 +4,13 @@
 TagManager:
   serializedVersion: 3
   tags:
+
   - Music
   - coin
+  - Coin
+  - Apple
+  - Bomb
+
   layers:
   - Default
   - TransparentFX
