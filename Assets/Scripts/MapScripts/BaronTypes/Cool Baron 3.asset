@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a11d95441ac494811ac629eb5257d22d, type: 3}
-  m_Name: Cool Baron
+  m_Name: Cool Baron 3
   m_EditorClassIdentifier: 
   Difficulty: 2
   Loot: 4
-  BaronName: Cool Baron
+  BaronName: Cool Baron 3
   BaronImage: {fileID: 21300000, guid: f6f4893c859cd144d961c4588486f1d7, type: 3}
   Events: 

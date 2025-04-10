@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -23,6 +24,8 @@ namespace Map
         public SpriteRenderer visitedCircle;
         public Image circleImage;
         public Image visitedCircleImage;
+        public List<EnemyStats> PossibleBarrons;
+        public EnemyStats SelectedBarrons;
 
         public Node Node { get; private set; }
         public NodeBlueprint Blueprint { get; private set; }
@@ -54,6 +57,8 @@ namespace Map
                 circleImage.color = MapView.Instance.visitedColor;
                 circleImage.gameObject.SetActive(false);    
             }
+
+            SelectedBarrons = PossibleBarrons[UnityEngine.Random.Range(0, PossibleBarrons.Count)];
             
             SetState(NodeStates.Locked);
         }
@@ -130,6 +135,8 @@ namespace Map
                 image.transform.DOKill();
                 image.transform.DOScale(initialScale * HoverScaleFactor, 0.3f);
             }
+
+            MapPlayerTracker.Instance.HoveredNode(SelectedBarrons);
         }
 
         public void OnPointerExit(PointerEventData data)

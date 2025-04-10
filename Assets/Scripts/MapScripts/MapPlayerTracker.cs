@@ -3,6 +3,7 @@ using System.Linq;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 namespace Map
 {
@@ -16,9 +17,13 @@ namespace Map
         public static MapPlayerTracker Instance;
 
         public bool Locked { get; set; }
+        [Header("Transer Info")]
+        public TransferLevelInfo Info;
 
         [Header("Barron UI")]
-        public Sprite Barons;
+        public Image Barons;
+        public TextMeshProUGUI BaronText;
+        public GameObject Button;
 
         private void Awake()
         {
@@ -30,6 +35,7 @@ namespace Map
             if (Locked) return;
 
             // Debug.Log("Selected node: " + mapNode.Node.point);
+            if (Button != null) Button.SetActive(true);
 
             if (mapManager.CurrentMap.path.Count == 0)
             {
@@ -59,6 +65,7 @@ namespace Map
             view.SetAttainableNodes();
             view.SetLineColors();
             mapNode.ShowSwirlAnimation();
+            Info.Enemy = mapNode.SelectedBarrons;
 
             DOTween.Sequence().AppendInterval(enterNodeDelay).OnComplete(() => EnterNode(mapNode));
         }
@@ -89,6 +96,14 @@ namespace Map
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+        }
+
+        public void HoveredNode(EnemyStats _Enemy)
+        {
+            if (Locked) return;
+
+            Barons.sprite = _Enemy.BaronImage;
+            BaronText.text = _Enemy.BaronName;
         }
 
         private void PlayWarningThatNodeCannotBeAccessed()
