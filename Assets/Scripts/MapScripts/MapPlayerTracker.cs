@@ -35,7 +35,6 @@ namespace Map
             if (Locked) return;
 
             // Debug.Log("Selected node: " + mapNode.Node.point);
-            if (Button != null) Button.SetActive(true);
 
             if (mapManager.CurrentMap.path.Count == 0)
             {
@@ -59,6 +58,8 @@ namespace Map
 
         private void SendPlayerToNode(MapNode mapNode)
         {
+            if (Button != null) Button.SetActive(true);
+
             Locked = lockAfterSelecting;
             mapManager.CurrentMap.path.Add(mapNode.Node.point);
             mapManager.SaveMap();
