@@ -41,7 +41,6 @@ namespace Map
         public Image BaronImage;
         public TextMeshProUGUI BaronName;
         public TextMeshProUGUI BaronInfo;
-
         public void SetUp(Node node, NodeBlueprint blueprint)
         {
 
@@ -69,6 +68,8 @@ namespace Map
 
             BaronImage.sprite = SelectedBarrons.BaronImage;
             BaronName.text = SelectedBarrons.BaronName;           
+            BaronInfo.text = "Difficulty: " + SelectedBarrons.Difficulty.ToString() +
+                             "\nLoot: " + SelectedBarrons.Loot.ToString();
             SetState(NodeStates.Locked);
         }
 
