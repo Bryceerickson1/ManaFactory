@@ -35,7 +35,6 @@ namespace Map
             if (Locked) return;
 
             // Debug.Log("Selected node: " + mapNode.Node.point);
-            if (Button != null) Button.SetActive(true);
 
             if (mapManager.CurrentMap.path.Count == 0)
             {
@@ -59,6 +58,8 @@ namespace Map
 
         private void SendPlayerToNode(MapNode mapNode)
         {
+            if (Button != null) Button.SetActive(true);
+
             Locked = lockAfterSelecting;
             mapManager.CurrentMap.path.Add(mapNode.Node.point);
             mapManager.SaveMap();
@@ -66,6 +67,7 @@ namespace Map
             view.SetLineColors();
             mapNode.ShowSwirlAnimation();
             Info.Enemy = mapNode.SelectedBarrons;
+            UpdateNode(Info.Enemy);
 
             DOTween.Sequence().AppendInterval(enterNodeDelay).OnComplete(() => EnterNode(mapNode));
         }
@@ -98,10 +100,8 @@ namespace Map
             }
         }
 
-        public void HoveredNode(EnemyStats _Enemy)
+        public void UpdateNode(EnemyStats _Enemy)
         {
-            if (Locked) return;
-
             Barons.sprite = _Enemy.BaronImage;
             BaronText.text = _Enemy.BaronName;
         }
