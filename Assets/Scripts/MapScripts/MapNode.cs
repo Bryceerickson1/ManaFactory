@@ -4,6 +4,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using TMPro;
 
 namespace Map
 {
@@ -35,9 +36,15 @@ namespace Map
         private float mouseDownTime;
 
         private const float MaxClickDuration = 0.5f;
+        [Header("Popup")]
+        public GameObject PopUp;
+        public Image BaronImage;
+        public TextMeshProUGUI BaronName;
+        public TextMeshProUGUI BaronInfo;
 
         public void SetUp(Node node, NodeBlueprint blueprint)
         {
+
             Node = node;
             Blueprint = blueprint;
             if (sr != null) sr.sprite = blueprint.sprite;
@@ -59,7 +66,9 @@ namespace Map
             }
 
             SelectedBarrons = PossibleBarrons[UnityEngine.Random.Range(0, PossibleBarrons.Count)];
-            
+
+            BaronImage.sprite = SelectedBarrons.BaronImage;
+            BaronName.text = SelectedBarrons.BaronName;           
             SetState(NodeStates.Locked);
         }
 
@@ -135,8 +144,7 @@ namespace Map
                 image.transform.DOKill();
                 image.transform.DOScale(initialScale * HoverScaleFactor, 0.3f);
             }
-
-            MapPlayerTracker.Instance.HoveredNode(SelectedBarrons);
+            PopUp.SetActive(true);
         }
 
         public void OnPointerExit(PointerEventData data)
@@ -152,6 +160,7 @@ namespace Map
                 image.transform.DOKill();
                 image.transform.DOScale(initialScale, 0.3f);
             }
+            PopUp.SetActive(false);
         }
 
         public void OnPointerDown(PointerEventData data)

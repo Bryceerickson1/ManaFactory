@@ -67,6 +67,7 @@ namespace Map
             view.SetLineColors();
             mapNode.ShowSwirlAnimation();
             Info.Enemy = mapNode.SelectedBarrons;
+            UpdateNode(Info.Enemy);
 
             DOTween.Sequence().AppendInterval(enterNodeDelay).OnComplete(() => EnterNode(mapNode));
         }
@@ -99,10 +100,8 @@ namespace Map
             }
         }
 
-        public void HoveredNode(EnemyStats _Enemy)
+        public void UpdateNode(EnemyStats _Enemy)
         {
-            if (Locked) return;
-
             Barons.sprite = _Enemy.BaronImage;
             BaronText.text = _Enemy.BaronName;
         }
