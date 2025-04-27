@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8311055753146410963}
   - component: {fileID: 4415521246333671964}
   - component: {fileID: 2022700762698437454}
+  - component: {fileID: 6430703527169410840}
   m_Layer: 0
   m_Name: EmptyConveyor
   m_TagString: Untagged
@@ -137,6 +138,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6430703527169410840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3159865540963794232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0eac7299c6c7dd4c9c36b5f36bc4f1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8855994344407274197
 GameObject:
   m_ObjectHideFlags: 0
