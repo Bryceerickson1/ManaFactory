@@ -6,6 +6,8 @@ using UnityEngine;
 public class ConverorBeltManager : MonoBehaviour
 {
     [SerializeField] GameObject BeltPrefab;
+    [Tooltip("Offset for the items that spawn")]
+    [SerializeField] Vector3 ItemsOffset;
     [Tooltip("What the belt touches to be deleted")]
     [SerializeField] BoxCollider DeletionObject;
     [SerializeField] ConverorBeltItems[] SpawnableItems;
@@ -32,9 +34,10 @@ public class ConverorBeltManager : MonoBehaviour
         {
             if(SpawnableItems[I].TopRange >= randomNumber)
             {
-                Vector3 offset = new Vector3(transform.position.x, transform.position.y + 0.8f, transform.position.z);
                 if(SpawnableItems[I].Item == null) break;
-                GameObject createdItem = Instantiate(SpawnableItems[I].Item, offset, Quaternion.identity);
+                Debug.Log(ItemsOffset);
+                GameObject createdItem = Instantiate(SpawnableItems[I].Item, ItemsOffset + transform.position, Quaternion.identity);
+                break;
             }
         }
 
