@@ -37,6 +37,7 @@ public class ConverorBeltManager : MonoBehaviour
                 if(SpawnableItems[I].Item == null) break;
                 Debug.Log(ItemsOffset);
                 GameObject createdItem = Instantiate(SpawnableItems[I].Item, ItemsOffset + transform.position, Quaternion.identity);
+                CreatedBelts.Enqueue(createdItem);
                 break;
             }
         }
