@@ -254,8 +254,7 @@ GameObject:
   - component: {fileID: 7753029457732346814}
   - component: {fileID: 4237465304811497111}
   - component: {fileID: 5205264449136214426}
-  - component: {fileID: 6501645641894873549}
-  - component: {fileID: 3606738431384749492}
+  - component: {fileID: 6412874795109660620}
   m_Layer: 0
   m_Name: Bombs
   m_TagString: Untagged
@@ -401,7 +400,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: -0.00000023841858, y: 0, z: -0.00000008940697}
---- !u!114 &6501645641894873549
+--- !u!114 &6412874795109660620
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -410,34 +409,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 9088819868397524508}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73d5e23c0a96a9c419efdb0f5677814b, type: 3}
+  m_Script: {fileID: 11500000, guid: e0eac7299c6c7dd4c9c36b5f36bc4f1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnDetection:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3606738431384749492}
-        m_TargetAssemblyTypeName: StatsUtil, Assembly-CSharp
-        m_MethodName: DecreaseHealth
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &3606738431384749492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9088819868397524508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f375aaaac1474c74eaa9b6ac099bb5db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AmountDecreased: 20
