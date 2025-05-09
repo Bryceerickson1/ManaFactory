@@ -8,8 +8,8 @@ public class PlayerMovement : MonoBehaviour
 {
     //REMOVED PLAYER CAMERA
     public Camera playerCamera;
-    public float walkSpeed = 6f;
-    public float runSpeed = 12f;
+    public float walkSpeed = 5f;
+    public float runSpeed = 8f;
 
     //remove jump, jumpPower =7f => =0
     public float jumpPower = 7f;

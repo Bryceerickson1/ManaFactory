@@ -13,7 +13,8 @@ namespace Map
 
         private void Start()
         {
-            /*
+            
+             
             if (PlayerPrefs.HasKey("Map"))
             {
                 string mapJson = PlayerPrefs.GetString("Map");
@@ -31,8 +32,10 @@ namespace Map
                     view.ShowMap(map);
                 }
             }
+
+            
             else
-            */
+            
             {
                 GenerateNewMap();
             }
