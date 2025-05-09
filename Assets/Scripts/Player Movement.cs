@@ -8,8 +8,8 @@ public class PlayerMovement : MonoBehaviour
 {
     //REMOVED PLAYER CAMERA
     public Camera playerCamera;
-    public float walkSpeed = 6f;
-    public float runSpeed = 12f;
+    public float walkSpeed = 5f;
+    public float runSpeed = 8f;
 
     //remove jump, jumpPower =7f => =0
     public float jumpPower = 7f;
@@ -33,12 +33,15 @@ public class PlayerMovement : MonoBehaviour
         Cursor.visible = false;
     }
 
+    //STAMINA REFERENCE
+    [SerializeField] private StaminaManager staminaScript;
+
     void Update()
     {
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
 
-        bool isRunning = Input.GetKey(KeyCode.LeftShift);
+        bool isRunning = staminaScript.playerCanUseStamina && Input.GetKey(KeyCode.LeftShift);
         float curSpeedX = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Vertical") : 0;
         float curSpeedY = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Horizontal") : 0;
         float movementDirectionY = moveDirection.y;

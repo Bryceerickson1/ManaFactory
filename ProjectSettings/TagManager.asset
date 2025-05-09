@@ -8,6 +8,9 @@ TagManager:
   - Apple
   - Bomb
   - Delete
+  - Music
+  - Spider
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -40,7 +43,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - flashes
   m_SortingLayers:
   - name: Default
     uniqueID: 0

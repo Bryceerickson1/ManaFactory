@@ -12,11 +12,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 7057ca55570bd364ab543b72c8ff685e
   - enabled: 1
-    path: Assets/Scenes/Map Screen.unity
-    guid: 771b147c2aab7a34083ee9b304c12b40
+    path: Assets/Scenes/Fish's Map.unity
+    guid: cae2d5bbce5c23b4f82c444e5c47159a
   - enabled: 1
     path: Assets/Scenes/playscreen 1.unity
     guid: 14131a7b38dcaad479bebb5b04514107
+  - enabled: 1
+    path: Assets/Scenes/Game Over.unity
+    guid: e5ce33adaca7f2144ab5592196d0ce8e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

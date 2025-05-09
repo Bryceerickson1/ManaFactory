@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using UnityEngine;
 using Newtonsoft.Json;
 
@@ -30,6 +30,8 @@ namespace Map
                     view.ShowMap(map);
                 }
             }
+
+            
             else
             {
                 GenerateNewMap();
