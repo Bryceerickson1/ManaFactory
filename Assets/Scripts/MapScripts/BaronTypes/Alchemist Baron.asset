@@ -15,5 +15,5 @@ MonoBehaviour:
   Difficulty: 8
   Loot: 5
   BaronName: Alchemist Baron
-  BaronImage: {fileID: 21300000, guid: 6e7d1a1d1a133a14eacdcc0cc8609b26, type: 3}
+  BaronImage: {fileID: 21300000, guid: 5ba010222d1879244baaa2d1cf54d2df, type: 3}
   Events: 
