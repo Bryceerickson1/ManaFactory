@@ -15,5 +15,5 @@ MonoBehaviour:
   Difficulty: 4
   Loot: 4
   BaronName: Portal baron
-  BaronImage: {fileID: 21300000, guid: 34a6bbb9a3395d14b9b3545e8dc0b286, type: 3}
+  BaronImage: {fileID: 21300000, guid: f1fc922166f4c0c45851730906fd0119, type: 3}
   Events: 

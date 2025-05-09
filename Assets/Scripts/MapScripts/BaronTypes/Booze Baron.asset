@@ -15,5 +15,5 @@ MonoBehaviour:
   Difficulty: 2
   Loot: 3
   BaronName: Booze Baron
-  BaronImage: {fileID: 21300000, guid: 8f4de01be0e6fd24b91d1d761d6b6faf, type: 3}
+  BaronImage: {fileID: 21300000, guid: a764d05aa2cedd441b3bfd9073ddb7b4, type: 3}
   Events: booze

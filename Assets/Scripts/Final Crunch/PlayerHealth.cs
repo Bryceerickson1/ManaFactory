@@ -1,18 +1,25 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public float health = 100f;
+    public float maxHealth = 100f;
+    private float currentHealth;
 
-    public void TakeDamage(float damage)
+    void Start()
     {
-        health -= damage;
-        Debug.Log("Player Health: " + health);
+        currentHealth = maxHealth;
+    }
 
-        if (health <= 0)
+    public void TakeDamage(float amount)
+    {
+        currentHealth -= amount;
+        if (currentHealth <= 0f)
         {
-            Debug.Log("Player Died.");
-            // Handle player death
+            Debug.Log("Player Died!");
+            // Trigger death logic
+            SceneManager.LoadScene("Game Over");
+            Destroy(gameObject);
         }
     }
 }

@@ -8,6 +8,9 @@ TagManager:
   - Apple
   - Bomb
   - Delete
+  - Music
+  - Spider
+  - Enemy
   layers:
   - Default
   - TransparentFX

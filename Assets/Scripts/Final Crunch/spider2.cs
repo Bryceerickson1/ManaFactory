@@ -21,4 +21,7 @@ public class SpiderAI : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, 2f * Time.deltaTime);
         }
     }
+
+
+
 }

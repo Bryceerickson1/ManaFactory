@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1244228877943559194}
   - component: {fileID: 2025838046419165903}
   - component: {fileID: 5838326614660941389}
+  - component: {fileID: 7026867583099351073}
   m_Layer: 0
   m_Name: Spider (2)
   m_TagString: Untagged
@@ -135,6 +136,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 15
+--- !u!114 &7026867583099351073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5588087584648933620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7f45afb18816934bbeddb6b2067c4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageRange: 3
+  damageAmount: 10
+  damageInterval: 1
 --- !u!1 &6443343159612899359
 GameObject:
   m_ObjectHideFlags: 0
