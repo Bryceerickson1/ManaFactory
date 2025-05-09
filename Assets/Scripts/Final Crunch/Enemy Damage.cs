@@ -1,31 +1,41 @@
 using UnityEngine;
 
-public class EnemyProximityDamage : MonoBehaviour
+public class EnemyDamage : MonoBehaviour
 {
-    [SerializeField] private float damageRange = 200f;
-    [SerializeField] private float damageAmount = 20f;
-    [SerializeField] private float damageInterval = .1f;
+    public float damageRadius = 2f;
+    public float damageRange = 5f;
+    public float damageAmount = 10f;
+    public float damageInterval = 1f;
 
-    private GameObject player;
-    private PlayerHealth playerHealth;
     private float lastDamageTime;
-
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null)
-            playerHealth = player.GetComponent<PlayerHealth>();
+        lastDamageTime = Time.time;
     }
 
     void Update()
     {
-        if (playerHealth == null) return;
-
-        float distance = Vector3.Distance(transform.position, player.transform.position);
-        if (distance <= damageRange && Time.time - lastDamageTime >= damageInterval)
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, damageRange);
+    
+        foreach (var hitCollider in hitColliders)
         {
-            playerHealth.TakeDamage(damageAmount);
-            lastDamageTime = Time.time;
+            if (hitCollider.gameObject.CompareTag("Player"))
+            {
+                PlayerHealth playerHealth = hitCollider.GetComponentInParent<PlayerHealth>();
+                if (playerHealth != null && Time.time - lastDamageTime >= damageInterval)
+                {
+                    playerHealth.TakeDamage(damageAmount);
+                    lastDamageTime = Time.time;
+
+                    Destroy(gameObject);
+                }
+            }
         }
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, damageRadius);
     }
 }

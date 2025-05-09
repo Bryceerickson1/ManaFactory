@@ -148,8 +148,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7f45afb18816934bbeddb6b2067c4fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageRadius: 2
   damageRange: 3
-  damageAmount: 10
+  damageAmount: 20
   damageInterval: 1
 --- !u!1 &6443343159612899359
 GameObject:
