@@ -33,12 +33,15 @@ public class PlayerMovement : MonoBehaviour
         Cursor.visible = false;
     }
 
+    //STAMINA REFERENCE
+    [SerializeField] private StaminaManager staminaScript;
+
     void Update()
     {
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
 
-        bool isRunning = Input.GetKey(KeyCode.LeftShift);
+        bool isRunning = staminaScript.playerCanUseStamina && Input.GetKey(KeyCode.LeftShift);
         float curSpeedX = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Vertical") : 0;
         float curSpeedY = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Horizontal") : 0;
         float movementDirectionY = moveDirection.y;
