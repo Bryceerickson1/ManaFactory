@@ -1,22 +1,23 @@
 using UnityEngine;
-using System.Collections;
 
-public class VentScript : MonoBehaviour
+public class Spawner : MonoBehaviour
 {
-    public float spawnInterval = 2f;
     [SerializeField] private GameObject objectToSpawn;
+    [SerializeField] private float spawnInterval = 2f;
+
+    private float nextSpawnTime;
 
     void Start()
     {
-        StartCoroutine(SpawnLoop());
+        nextSpawnTime = Time.time + spawnInterval;
     }
 
-    IEnumerator SpawnLoop()
+    void Update()
     {
-        while (true)
+        if (Time.time >= nextSpawnTime)
         {
             Instantiate(objectToSpawn, transform.position, transform.rotation);
-            yield return new WaitForSeconds(spawnInterval);
+            nextSpawnTime = Time.time + spawnInterval;
         }
     }
 }
