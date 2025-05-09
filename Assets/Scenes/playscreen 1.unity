@@ -6332,6 +6332,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spider (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7026867583099351073, guid: b3a143ea3188b0e4094c8e41e694589b, type: 3}
+      propertyPath: damageRadius
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7761878454369548655, guid: b3a143ea3188b0e4094c8e41e694589b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.4741688

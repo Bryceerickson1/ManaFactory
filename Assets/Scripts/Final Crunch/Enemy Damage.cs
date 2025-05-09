@@ -3,7 +3,6 @@ using UnityEngine;
 public class EnemyDamage : MonoBehaviour
 {
     public float damageRadius = 2f;
-    public float damageRange = 5f;
     public float damageAmount = 10f;
     public float damageInterval = 1f;
 
@@ -15,7 +14,7 @@ public class EnemyDamage : MonoBehaviour
 
     void Update()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, damageRange);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, damageRadius);
     
         foreach (var hitCollider in hitColliders)
         {
